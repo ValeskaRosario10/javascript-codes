@@ -78,3 +78,6 @@ console.log(greter80(marks));
 // 8 Write a program to find the total marks scored by allstudentsin a class.
 const totmark1=marks.reduce((tot,m)=> (tot+m.marks),0)
 console.log(totmark1);
+
+
+//all question done

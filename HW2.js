@@ -70,8 +70,38 @@ fetchDetatilsAsync()
 // prices.   
 // 14. Show the uses of try/catch when processing a payment during the checkout process,
 // handling possible errors like payment failure or network issues.
+
+
 // 15. Show an example of exception propagation when adding an item to a shopping cart
 // if the product is out of stock in the online store's inventory.
+class NotInStock extends Error{
+    constructor(message){
+        super(message)
+        this.message=message;
+    }
+}
+function CheckInStock(stock){
+        if (!stock){
+            throw new NotInStock("NOt in stock")
+        }
+        return "Produce is available "
+}
+function addToCart(stock){
+    try{
+        const result = CheckInStock(stock)
+        console.log(result)
+    }
+    catch(e){
+        console.log("Error while adding to cart" ,e.message+" " +e.name);
+        
+    }
+    finally{
+        console.log("Cart operation done")
+    }
+}
+console.log("Question 15 ");
+addToCart(true);
+addToCart(false)
 // 16. Show an example of a finally block that executes when updating customer profile
 // information, regardless of whether the operation was successful or resulted in an
 // error.
@@ -117,3 +147,6 @@ function applycoupon(code){
 console.log(applycoupon("fsf"))
 // 18. Show an example of throw where a function throws an exception if a product's
 // quantity in the inventory falls below a certain threshold (e.g., less than 5 units)
+
+// Left
+// 13,14,18
