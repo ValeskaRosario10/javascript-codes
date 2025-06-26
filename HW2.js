@@ -67,7 +67,7 @@ fetchDetatilsAsync()
 // 13. Demonstrate an example for default parameters and rest parameters in a function
 // that calculates the total cost of items in a customer's shopping cart. Use a default
 // parameter for applying a discount rate and rest parameters for the list of product
-// prices.
+// prices.   
 // 14. Show the uses of try/catch when processing a payment during the checkout process,
 // handling possible errors like payment failure or network issues.
 // 15. Show an example of exception propagation when adding an item to a shopping cart
