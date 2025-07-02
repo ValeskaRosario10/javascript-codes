@@ -1,0 +1,114 @@
+<!-- //
+
+// 5.Create a contact form with fieldsfor name, email, and query. Implement JavaScript
+// validation to ensure:
+// a. Name: Is not empty and contains only alphabetic characters.
+// b. Email: Matches a valid email format.
+// c. Query: Is not empty and lessthan 1000 characters.
+// d. After validation, store the name, email, and query in localstorage -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+     <!--Q1... 1.Demonstrate how to create a new <li> element, set its text content, and append it
+// to an existing <ul> element on a web page using JavaScript. Add functionality to
+// store the text content of the new <li> element in local storage.-->
+    <h3>Question 1</h3>
+    enter the element <br>
+    <input type="text" id="data"> <br>
+    <button id="b"> Submit</button><br>
+    <ul id="ul">
+        <li>tv</li>
+        <li>ac</li>
+    </ul>
+<!-- 2. Implement an event listener that triggers an alert when a button with the ID
+// "myButton" is clicked on a web page. -->
+  <h3>Question 2</h3>
+    <button id="b2">Trigger an event listner</button> <br>
+
+<!-- 3.Create a new button "clearButton" that, when clicked, clearsthe click count from
+// local storage and resets the counter.-->
+ <h3>count: <span id="count">0</span></h3>
+<button onclick="inc()"> inc</button>
+<button onclick="clearcount()"> clear</button> <br><br>
+
+<!-- 4.Create a form with fieldsfor name, email, and password. Using JavaScript,
+implement client-side validation for the following criteria:
+a. Name: Should contain only alphabetic characters.
+b. Email: Should match a valid email format.
+c. Password: Should have a minimum length of 8 characters, including at least
+one uppercase letter, one lowercase letter, and one digit.
+d. After validating the form, store the name and email in localstorage-->
+
+Name: <input type="text" id="name"><br>
+email <input type="text" name="" id="email"><br>
+password : <input type="text" id="pw"><br>
+<button onclick="valid()"> submit</button> <br>
+
+<!-- 5.Create a contact form with fieldsfor name, email, and query. Implement JavaScript
+validation to ensure:
+a. Name: Is not empty and contains only alphabetic characters.
+b. Email: Matches a valid email format.
+c. Query: Is not empty and lessthan 1000 characters.
+d. After validation, store the name, email, and query in localstorage -->
+Name: <input type="text" id="name"><br>
+email <input type="text" name="" id="email"><br>
+query : <input type="text" id="pw"><br>
+<button onclick="valid()"> submit</button> <br>
+    <script>
+        //question 1
+       const b=document.getElementById("b")
+       b.addEventListener("click",()=>{
+        const data=document.getElementById("data").value
+        const ul=document.getElementById("ul")
+        const li=document.createElement("li")
+        li.textContent=data
+        ul.append(li)
+        localStorage.setItem("item",data)
+       })
+       //question 2
+       const b2=document.getElementById("b2")
+       b2.addEventListener("click",()=>{
+        alert("u clicked on a event listner button")
+       })
+       //question 3
+        var count=0;
+       function inc(){
+       count=count+1
+       console.log(count)
+        document.getElementById("count").textContent=count
+        localStorage.setItem("count",count)
+       }
+       function clearcount(){
+        count=0;
+        console.log("tried to clear")
+        document.getElementById("count").textContent=count
+        localStorage.setItem("count",count)
+       }
+       //question 4
+
+    function valid(){
+    const name=document.getElementById("name")
+     const email=document.getElementById("email")
+      const pw=document.getElementById("pw")
+      const namerang=/^[A-Za-z]+$/
+      const emailrang=/[^\s@]+@[^\s@]\.[^\s@]/
+      const passrang=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)$/
+      if (!namerang.test(name)){
+        alert("enter a valid name")
+      }
+    if (!emailrang.test(name)){
+        alert("enter a valid email")
+      }
+    if (!passrang.test(name)&& !pw.length>=8){
+        alert("enter a proper password")
+      }
+    }
+    </script>
+</body>
+</html>

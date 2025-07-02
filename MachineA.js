@@ -135,3 +135,21 @@ f1(true)
 // 13. Show an example of default parameters and rest parameters in a function that
 // calculates the total training cost based on session hours. Use a default parameter for
 // standard session charges and rest parameters for additional fees.
+
+// function calculateTrainingCost(hours, charge = 500, ...additionalFees) {
+//   const sessionCost = hours * charge;
+//   const extraCost = additionalFees.reduce((total, fee) => total + fee, 0);
+//   const total = sessionCost + extraCost;
+
+//   console.log(`🕒 Hours: ${hours}`);
+//   console.log(`💰 Charge/hour: ₹${charge}`);
+//   console.log(`➕ Extra charges: ₹${extraCost}`);
+//   console.log(`📦 Total training cost: ₹${total}`);
+  
+//   return total;
+// }
+// calculateTrainingCost(5); 
+// // uses default ₹500/hour, no extra fees
+
+// calculateTrainingCost(3, 600, 200, 150); 
+// // 3 hrs × ₹600 + ₹200 (material) + ₹150 (certification)
