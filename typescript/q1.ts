@@ -120,6 +120,17 @@ t1.getRoles();
 // Create an interface Attendance with a method markAttendance().
 // Implement this interface in the Student class, and define how attendance is marked
 // for a student.
+// interface Attendance{
+//     markAttendance();
+    
+// }
+// class Student3 implements Attendance{
+//     att:boolean[];
+//     markAttendance() {
+//         att
+//     }
+// }
+
 // 6
 // Create a generic function getStudentInfo<T>(info: T): T that returns any type of
 // student information, such as name, ID, or grade.
