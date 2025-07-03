@@ -6,6 +6,137 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!-- Write JavaScript to create a new <li> element representing a product name, set its
+text content, and append it to an existing <ul> of products. Store the product name
+in local storage -->
+<h2>Question 1</h2>
+<input type="text"  id="data"/>
+<ul id="ul">
+    <li>tv </li>
+    <li>ac</li>
+</ul>
+<button onclick="addelement()">b1</button>
+<script>
+    function addelement(){
+        console.log("tried to add")
+        const data= document.getElementById("data").value;
+        const ul=document.getElementById("ul")
+        const li=document.createElement("li")
+        li.textContent=data
+        ul.append(li)
+        localStorage.setItem("item",data)
+    }
+</script>
+<!-- 2Implement an event listener that triggers an alert showing the number of items
+added to the cart when a button with the ID "addToCart" is clicked. Track the item
+count in localstorage. -->
+<br>
+<h2>Question 3</h2>
+<button id="b2"> addToCart</button>
+<script>
+    const b2 = document.getElementById("b2")
+    b2.addEventListener("click",()=>{
+        const nooful=document.querySelectorAll("ul li")
+        console.log(nooful.length)
+        alert("No of elements in cart"+ nooful.length)
+        localStorage.setItem("count",nooful.length)
+    })
+</script>
+<!-- 3 Create a "resetCart" button to clear the cart count from localstorage. -->
+ <br><h2>Question 3</h2>
+ <button onclick="resetc()">resetCart</button>
+ <script>
+    function resetc(){
+        console.log("tried to reset ")
+        localStorage.setItem("count",0)
+    }
+ </script>
+<!-- 4Create a product form with fields for product name, price, and quantity. Use
+JavaScript for client-side validation:
+a. Product Name: Should not be empty.
+b. Price: Should be a positive number.
+c. Quantity: Should be a numeric value greater than 0.
+d. Store the product’s detailsin localstorage upon successful validation. -->
+     <br><h2>Question 4</h2>
+   
+        product name <br>
+        <input type="text" id="pname"/> <br/>
+        product price <br>
+        <input type="text" id="pprice"/> <br/>
+        product quantity <br>
+        <input type="text" id="pquantity" /><br/> 
+       <button onclick="buttonclicked()" id="b">Submit </button>
+       <script>
+        function buttonclicked(){
+            console.log("tried to check")
+            const pname=document.getElementById("pname").value
+            const pprice=document.getElementById("pprice").value
+            const pquantity=document.getElementById("pquantity").value
+            // if(pname.length<1){
+            //     alert("pls enter the product name")
+            // }
+            // if(pprice<0){
+            //     alert("enter a postive price")
+            // }
+            // if(pquantity<=0){
+            //     alert("enter a postive quantity")
+            // }
+            // else{
+            //     localStorage.setItem("pname",pname)
+            //     localStorage.setItem("pprice",pprice)
+            //     localStorage.setItem("pquantity",pquantity)
+            // }
+            
+
+        }
+       </script>
+<!-- 5 create an order form with fieldsfor customer name, product, and address.
+Implement JavaScript validation to ensure:
+a. Customer Name: Is not empty and contains only alphabetic characters.
+b. Product: Matches one of the available products.
+c. Address: Is not empty.
+d. Store each order (customer name, product, address) in localstorage after
+validation. --> 
+ <br><h2>Question 5</h2>
+   
+        customer name <br>
+        <input type="text" id="cname"/> <br/>
+        product name <br>
+        <input type="text" id="pname"/> <br/>
+        customer address <br>
+        <input type="text" id="caddress" /><br/> 
+       <button onclick="valid()" id="b">Submit </button>
+       <script>
+            function valid(){
+                const availableProducts = ["laptop", "phone", "tablet", "headphones"];
+            console.log("tried to validate")
+            const prname=document.getElementById("pname").value
+            const cname=document.getElementById("cname").value
+            const caddress=document.getElementById("caddress").value
+                    const nrange=/^[A-Za-z\s]+$/
+         
+            if(!nrange.test(cname)){
+                alert("enter a valid name")
+                return
+            }
+            if(caddress.length<1){
+                alert("pls enter the address")
+                return
+            }
+            if(!availableProducts.includes(prname.toLowerCase())){
+                alert("choose a valid product ")
+                return
+            }
+
+            else{
+                alert("product added to cart")
+                localStorage.setItem("prname",prname)
+                localStorage.setItem("cname",cname)
+                localStorage.setItem("caddress",caddress)
+            }
+            
+
+        }
+       </script>
 </body>
 </html>
